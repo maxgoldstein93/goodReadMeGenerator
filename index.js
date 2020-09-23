@@ -1,53 +1,63 @@
 const inquirer = require('inquirer');
 const fs = require("fs");
+const Choices = require('inquirer/lib/objects/choices');
 require("./utils/generateMarkdown.js")
 
 // array of questions for user
 const questions = [{
     type: "input",
-    message: "What is the title of your project? ",
-    name: "projectTitle"
+    message: "What is your GitHub username? ",
+    name: "projectUsername"
 },{
     type: "input",
-    message: "What is your project description? ",
-    name: "projectDescription"
+    message: "What is your email address?",
+    name: "projectEmail"
 
-
-
-},{
-    type: "input",
-    message: "How do users install this project? ",
-    name: "projectInstall"
 
 
 },{
     type: "input",
-    message: "How do users use this project? ",
-    name: "projectUsage"
+    message: "What is your project's name? ",
+    name: "projectName"
+
+
+},{
+    type: "list",
+    message: "What kind of license should your project have? ",
+    name: "projectLicense",
+    choices: [
+        "MIT",
+        "APACHE 2.0",
+        "GPL 3.0",
+        "BSD 3",
+        "None"
+    ]
+
+
+},{
+    type: "default",
+    message: "What command should be run to install dependencies?",
+    default: "npm i",
+    name: "projectDep"
 
 
 },{
     type: "input",
-    message: "What license do you want to use? ",
-    name: "projectLicense"
+    message: "What command should be run to run tests?",
+    default: "npm test",
+    name: "projectTests"
 
 
 },{
     type: "input",
-    message: "Who contributed to this project? ",
+    message: "What does the user need to know about using the repo?",
+    name: "projectUserKnow"
+
+
+},{
+    type: "input",
+    message: "What does the user need to know about contributing to the repo?",
     name: "projectContribution"
-
-
-},{
-    type: "input",
-    message: "How to test this project ",
-    name: "projectTest"
-
-
-},{
-    type: "input",
-    message: "Questions about the Project?",
-    name: "projectQuestions"
 
 }
     
@@ -56,6 +66,7 @@ const questions = [{
 
 // function to write README file
 function writeToFile(fileName, data) {
+    fs.writeToFile("generatedReadMe.md")
 }
 //  call generateMArkdown from other file
 
