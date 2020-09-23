@@ -2,7 +2,7 @@ const inquirer = require('inquirer');
 const fs = require("fs");
 const Choices = require('inquirer/lib/objects/choices');
 const generateMarkdown = require('./utils/generateMarkdown.js');
-require("./utils/generateMarkdown.js")
+
 
 // array of questions for user
 const questions = [{
@@ -67,14 +67,14 @@ const questions = [{
     name: "Contribution"
 
 }
-    
-
 ];
 
 // function to write README file
 function writeToFile(fileName, data) {
-    fs.writeToFile("generatedReadMe.md", data)
-}
+    return fs.writeFileSync(fileName, data)
+
+};
+// writeToFile()
 //  call generateMArkdown from other file
 
 // function to initialize program
@@ -83,13 +83,10 @@ function init() {
         .prompt(questions)
         .then(answers => {
             console.log(answers)
-             generateMarkdown()
-            
-        })
-        
-
+            console.log("Success your read me is being generated...")
+            writeToFile("generateReadMe.md", generateMarkdown(answers));    
+        });
 }
-
 // function call to initialize program
 init();
 

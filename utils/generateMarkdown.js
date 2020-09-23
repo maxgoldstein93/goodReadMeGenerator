@@ -7,24 +7,28 @@ function generateMarkdown(data) {
 
   ${data.Description}
 
-  ##Table of Contents
+  ## Table of Contents
 
-  ##Installation
+  ## Installation
 
   To install necessary dependencies, run the following command:
+
   ${data.Dependencies}
 
-  ##Usage
+  ## Usage
+
   ${data.Usage}
 
-  ##Contributing
+  ## Contributing
+
   ${data.Contribution}
 
-  #Tests
+  # Tests
   To run tests, run the following command:
+  
   ${data.Tests}
 
-  #Questions
+  # Questions
   If you have any questions about the repo, open an issue or contact me directly at ${data.Email}. You can find more of my work at ${data.Github}.
 
 `;
