@@ -1,30 +1,37 @@
 const inquirer = require('inquirer');
 const fs = require("fs");
 const Choices = require('inquirer/lib/objects/choices');
+const generateMarkdown = require('./utils/generateMarkdown.js');
 require("./utils/generateMarkdown.js")
 
 // array of questions for user
 const questions = [{
     type: "input",
     message: "What is your GitHub username? ",
-    name: "projectUsername"
+    name: "Github"
 },{
     type: "input",
     message: "What is your email address?",
-    name: "projectEmail"
+    name: "Email"
 
 
 
 },{
     type: "input",
-    message: "What is your project's name? ",
-    name: "projectName"
+    message: "What is your project's Title? ",
+    name: "Title"
+
+
+},{
+    type: "input",
+    message: "What is your project's description? ",
+    name: "Description"
 
 
 },{
     type: "list",
     message: "What kind of license should your project have? ",
-    name: "projectLicense",
+    name: "License",
     choices: [
         "MIT",
         "APACHE 2.0",
@@ -38,26 +45,26 @@ const questions = [{
     type: "default",
     message: "What command should be run to install dependencies?",
     default: "npm i",
-    name: "projectDep"
+    name: "Dependencies"
 
 
 },{
     type: "input",
     message: "What command should be run to run tests?",
     default: "npm test",
-    name: "projectTests"
+    name: "Tests"
 
 
 },{
     type: "input",
     message: "What does the user need to know about using the repo?",
-    name: "projectUserKnow"
+    name: "Usage"
 
 
 },{
     type: "input",
     message: "What does the user need to know about contributing to the repo?",
-    name: "projectContribution"
+    name: "Contribution"
 
 }
     
@@ -66,7 +73,7 @@ const questions = [{
 
 // function to write README file
 function writeToFile(fileName, data) {
-    fs.writeToFile("generatedReadMe.md")
+    fs.writeToFile("generatedReadMe.md", data)
 }
 //  call generateMArkdown from other file
 
@@ -76,15 +83,10 @@ function init() {
         .prompt(questions)
         .then(answers => {
             console.log(answers)
-            // Use user feedback for... whatever!!
+             generateMarkdown()
+            
         })
-        .catch(error => {
-            if (error.isTtyError) {
-                // Prompt couldn't be rendered in the current environment
-            } else {
-                // Something else when wrong
-            }
-        });
+        
 
 }
 
