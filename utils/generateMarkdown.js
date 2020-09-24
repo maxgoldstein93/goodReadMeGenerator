@@ -30,6 +30,10 @@ To install necessary dependencies, run the following command:
 
   ${data.Usage}
 
+## License
+
+This apllication is licensed under the ${data.License} license.
+
 ## Contributing
 
 ${data.Contribution}

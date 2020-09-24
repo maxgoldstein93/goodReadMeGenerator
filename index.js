@@ -84,7 +84,7 @@ function init() {
         .then(answers => {
             console.log(answers)
             console.log("Success your read me is being generated...")
-            writeToFile("geberatorReadMe.md", generateMarkdown(answers));    
+            writeToFile("generatorReadMe.md", generateMarkdown(answers));    
         });
 }
 // function call to initialize program
