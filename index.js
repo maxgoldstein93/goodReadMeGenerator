@@ -34,9 +34,9 @@ const questions = [{
     name: "License",
     choices: [
         "MIT",
-        "APACHE 2.0",
-        "GPL 3.0",
-        "BSD 3",
+        "APACHE-2.0",
+        "GPL-3.0",
+        "BSD-3",
         "None"
     ]
 
@@ -84,7 +84,7 @@ function init() {
         .then(answers => {
             console.log(answers)
             console.log("Success your read me is being generated...")
-            writeToFile("generateReadMe.md", generateMarkdown(answers));    
+            writeToFile("generateReadMegood.md", generateMarkdown(answers));    
         });
 }
 // function call to initialize program

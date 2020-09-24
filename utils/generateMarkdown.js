@@ -1,7 +1,10 @@
 // function to generate markdown for README
 function generateMarkdown(data) {
   return `# ${data.Title}
-  future home of license
+  
+  ## License
+
+  ![License](https://img.shields.io/static/v1?label=${data.License}&message=license&color=red)
 
   ## Description
 
