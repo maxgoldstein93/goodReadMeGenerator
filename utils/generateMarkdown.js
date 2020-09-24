@@ -24,7 +24,7 @@ ${data.Description}
 
 To install necessary dependencies, run the following command:
 
-${data.Dependencies}
+ \`\`\`${data.Dependencies}\`\`\`
 
 ## Usage
 
@@ -36,8 +36,9 @@ ${data.Contribution}
 
 # Tests
   To run tests, run the following command:
-  
-${data.Tests}
+ 
+  \`\`\`${data.Tests}\`\`\`
+
 
 # Questions
 If you have any questions about the repo, open an issue or contact me directly at ${data.Email}. You can find more of my work on my GitHub ${data.Github}.
