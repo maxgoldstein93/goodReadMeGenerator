@@ -41,3 +41,7 @@ If they choose to contribute please comment on all code.
 # Questions
 If you have any questions about the repo, open an issue or contact me directly at magoldstein93@gmail.com. You can find more of my work on my GitHub maxgoldstein93.
 
+![screenshot](assets/app.png)
+
+
+
